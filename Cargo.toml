@@ -1,0 +1,17 @@
+[package]
+name = "f1-telemetry-tui"
+version = "0.1.0"
+authors = ["Aldi Perdana <aldidana@gmail.com>"]
+edition = "2018"
+description = "Terminal Telemetry for F1 Video Games"
+repository = "https://github.com/aldidana/f1-telemetry-tui"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-std = { version = "1.6.5", features = ['attributes'] }
+crossbeam = "0.8.0"
+crossbeam-channel = "0.5.0"
+f1-telemetry-client = "0.1.1"
+tui = { version = "0.12", default-features = false, features = ['crossterm'] }
