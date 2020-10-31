@@ -1,6 +1,6 @@
 [package]
 name = "f1-telemetry-tui"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Aldi Perdana <aldidana@gmail.com>"]
 edition = "2018"
 description = "Terminal Telemetry for F1 Video Games"
