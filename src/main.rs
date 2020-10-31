@@ -7,7 +7,11 @@ mod app;
 
 #[async_std::main]
 async fn main() -> Result<(), Error> {
-    let client = Telemetry::new("192.168.1.9", 20777).await.unwrap();
+    let ip_address = std::env::args().nth(1).expect("No IP Address given");
+    let port = std::env::args().nth(2).expect("No Port given");
+    let port = port.parse().expect("Port must be number");
+
+    let client = Telemetry::new(ip_address.as_str(), port).await.unwrap();
 
     let (tx, rx) = unbounded();
     let rx_clone = rx.clone();
