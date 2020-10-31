@@ -246,11 +246,11 @@ impl App {
 						.margin(1)
 						.constraints(
 							[
-								Constraint::Percentage(35), // car status
+								Constraint::Percentage(40), // car status
 								Constraint::Percentage(10), // rev light
 								Constraint::Percentage(10), // rev light
 								Constraint::Percentage(10), // rev light
-								Constraint::Percentage(35), // car telemetry
+								Constraint::Percentage(30), // car telemetry
 							]
 							  .as_ref(),
 						)
@@ -264,7 +264,7 @@ impl App {
 						.margin(1)
 						.direction(Direction::Horizontal)
 						.constraints(
-							[Constraint::Percentage(50), Constraint::Percentage(50)].as_ref(),
+							[Constraint::Percentage(70), Constraint::Percentage(30)].as_ref(),
 						)
 						.split(left_layout[0]);
 
@@ -458,7 +458,7 @@ impl App {
 					  });
 
 					  let live_position = Table::new(
-						  ["P", "Driver", "Lap", "Last Lap", "Best Lap", "Tyre"].iter(),
+						  ["P", "Driver", "L", "Last Lap", "Best Lap", "Tyre"].iter(),
 						  positions.clone().into_iter(),
 					  )
 						.block(
@@ -467,15 +467,15 @@ impl App {
 							  .title("Live Position"),
 						)
 						.widths(&[
-							Constraint::Length(2),
-							Constraint::Length(10),
-							Constraint::Length(3),
-							Constraint::Length(8),
-							Constraint::Length(8),
-							Constraint::Length(5),
+							Constraint::Percentage(5),
+							Constraint::Percentage(20),
+							Constraint::Percentage(5),
+							Constraint::Percentage(15),
+							Constraint::Percentage(15),
+							Constraint::Percentage(15),
 						])
 						.style(Style::default().fg(Color::White))
-						.column_spacing(5);
+						.column_spacing(3);
 
 					  f.render_widget(live_position, right_layout[0]);
 				  })
